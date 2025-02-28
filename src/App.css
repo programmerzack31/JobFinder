@@ -1,0 +1,314 @@
+/* Base Styles */
+.App {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.menu {
+  width: 100vw;
+  height: 80px;
+  background-color: #3f0069;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(bg1.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+  color: white;
+  /* overflow-x: hidden; */
+}
+
+.jobbox {
+  width: 270px;
+  min-height: 300px;
+  max-height: 400px;
+  border: 2px solid rgb(255, 213, 128);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  line-height: 35px;
+  margin-bottom: 14px;
+  margin-right: 12px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.jobcontainer {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.jobbox h1 {
+  font-weight: 600;
+  font-size: 22px;
+  color: #e7b100;
+}
+
+.jobbox p strong {
+  font-family: sans-serif;
+  color: #ffe5b7;
+}
+
+.jobbox p {
+  color: #ffa472;
+  font-weight: 500;
+}
+
+.jobbox button {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  line-height: .5em;
+  min-width: 50px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:active,
+button:hover {
+  outline: 0;
+}
+
+button span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+button:hover span {
+  background: none;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+input {
+  height: 10px;
+  width: 250px;
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #e8e8e8;
+  box-shadow: 2px 2px 12px #c5c5c5;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+input:focus {
+  outline-color: #e8e8e8;
+  background: #e8e8e8;
+  box-shadow: inset 20px 20px 60px #c5c5c5,
+    inset -20px -20px 60px #ffffff;
+  transition: 0.3s;
+}
+
+.boton-elegante {
+  padding: 10px 20px;
+  border: 2px solid #2c2c2c;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.boton-elegante::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.boton-elegante:hover::after {
+  transform: scale(4);
+}
+
+.boton-elegante:hover {
+  border-color: #666666;
+  background: #292929;
+}
+.myhead{
+  color: rgb(255, 174, 0);
+  margin-top: 70px;
+}
+.menu h1{
+  font-weight: 500;
+  font-size: 26px;
+  color: #ebceff;
+}
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  /* Adjust logo size */
+  .App-logo {
+    height: 20vmin;
+  }
+
+  /* Adjust menu height for smaller screens */
+  .menu {
+    height: 60px;
+  }
+
+  /* Stack job boxes in smaller screens */
+  .jobcontainer {
+    display: block;
+  }
+
+  .jobbox {
+    width: 90%;
+    margin-right: 0;
+    margin-left: auto;
+    margin-bottom: 12px;
+  }
+
+  /* Adjust text sizes for smaller screens */
+  .jobbox h1 {
+    font-size: 20px;
+  }
+
+  .jobbox p {
+    font-size: 14px;
+  }
+
+  /* Adjust the button and input fields for smaller screens */
+  input {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .boton-elegante {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+  .menu h1{
+    font-weight: 400;
+    font-size: 17px;
+  }
+  
+}
+
+@media screen and (max-width: 480px) {
+  /* Further adjustment for very small screens */
+  .App-logo {
+    height: 15vmin;
+  }
+
+  .menu {
+    height: 50px;
+  }
+
+  .jobbox {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .menu h1{
+    font-weight: 400;
+    font-size: 13px;
+    /* margin-left: 4px; */
+  }
+  .jobbox h1 {
+    font-size: 18px;
+  }
+
+  .jobbox p {
+    font-size: 12px;
+  }
+
+  input {
+    width: 44%;
+  }
+  .myhead{
+    font-size: 15px;
+  }
+
+  .boton-elegante {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
